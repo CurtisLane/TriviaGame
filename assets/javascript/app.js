@@ -1,15 +1,20 @@
-// Document ready function
+$( document ).ready(function() { // page loads before js is executed
+    console.log( "ready!" );
 
 // Global Variables
 const domOne = $('#id')
-const domOne = $('#id')
-const domOne = $('#id')
-const domOne = $('#id')
-const domOne = $('#id')
-const domOne = $('#id')
+const domTwo = $('#id')
+const domThree = $('#id')
+const domFour = $('#id')
+const domFive = $('#id')
+const domSix = $('#id')
 const restartButton = $('#restartButton')
 
 // Questions object with 3 tiers(book 1,2,3) of 10 questions each.
+
+
+
+
 // Each tier connects with one third of gameplay
 // player is graded based on correct guesses and evaluated for fandom level
 // each tier resets number of wrong guesses
@@ -21,3 +26,9 @@ const restartButton = $('#restartButton')
 // once finished, player game stats are displayed
 // after game is finished, start over button appears
 // start over button does not relaod the page
+
+
+
+
+
+}); // *close document.ready function
