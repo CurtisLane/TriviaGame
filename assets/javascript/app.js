@@ -91,7 +91,6 @@ const startButton = function() {
         $(this).hide();
         if (questionNumber === questions.questionOne) {
             askQuestion(questionNumber)
-            questionNumber=questions.questionTwo
         }
     });
 }
@@ -110,7 +109,7 @@ const timer = function(seconds){
 };
  
 function askQuestion(currentQuestion) {
-    timer(10);
+    timer(1);
     message.html(currentQuestion.ask)
     answerA.html(currentQuestion.choices[0])
     answerB.html(currentQuestion.choices[1])
@@ -120,11 +119,12 @@ function askQuestion(currentQuestion) {
 
 function outOfTime(currentQuestion) {
     message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
+    questionNumber=questions.questionTwo
     $('#centerImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
     answers.hide();
     timerDiv.hide();
     setTimeout(function(){
-        askQuestion(currentQuestion);
+        askQuestion(questionNumber);
         answers.show();
         timerDiv.show();
         $('#centerImage').hide();
