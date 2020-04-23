@@ -4,12 +4,12 @@ $( document ).ready(function() { // page loads before js is executed
 // Questions object with 3 tiers(book 1,2,3) of 10 questions each.
 const questions = {
     questionOne: {
-    ask: 'How long was Aang frozen in ice before being discovered?',
-    choices: ['A. 4 years','B. 10 years','C. 50 years','D. 100 years'],
-    answer: 'D. 100 years',
+        ask: 'How long was Aang frozen in ice before being discovered?',
+        choices: ['A. 4 years','B. 10 years','C. 50 years','D. 100 years'],
+        answer: 'D. 100 years',
     },
     questionTwo: {
-    ask: "What did Sokka's first girlfriend turn into?",
+        ask: "What did Sokka's first girlfriend turn into?",
         choices: ['A. A fish','B. A river','C. The moon','D. The ocean'],
         answer: 'C. The moon',
     },
@@ -61,7 +61,7 @@ const header = $('#headerH')
 
 const timer = function(){
     // timer counts down from 30 to 0
-    let count = 30
+    let count = 3
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
@@ -83,6 +83,7 @@ const startButton = function() {
         ask = true;
         timer();
         $(this).hide();
+        askQuestion(questions.questionOne)
     });
 }
 const restartButton = function() {
@@ -106,9 +107,17 @@ if (ask === false) {
 
 function outOfTime() {
     message.html('You ran out of time! The correct answer was ')
-    $('#leftImage').html('<img src="../images/iroh3.jpg alt="Uncle Iroh">')
+    $('#leftImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
+
 }
 
+function askQuestion(currentQuestion) {
+    message.html(currentQuestion.ask)
+    $('#answersA').html(currentQuestion.choices[0])
+    $('#answersB').html(currentQuestion.choices[1])
+    $('#answersC').html(currentQuestion.choices[2])
+    $('#answersD').html(currentQuestion.choices[3])
+}
 
 
 
