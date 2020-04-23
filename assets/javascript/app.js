@@ -67,7 +67,7 @@ const timer = function(){
         $('#timerH').html('Time left: ' + count + ' seconds')
         if (count===0){
             clearInterval(timerId);
-            outOfTime()
+            outOfTime(questions.questionOne, questions.questionTwo)
         }
     }, 1000)
     
@@ -81,7 +81,6 @@ const startButton = function() {
     $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
     $('#startButton').click(function() {
         ask = true;
-        timer();
         $(this).hide();
         askQuestion(questions.questionOne)
     });
@@ -100,18 +99,32 @@ let correctAnswers = 0;
 let incorrectAnswers = 0;
 let playerScore = 0;
 let ask = false;
+let allDone = false;
 
 if (ask === false) {
     startButton();
 }
 
-function outOfTime() {
-    message.html('You ran out of time! The correct answer was ')
-    $('#leftImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
+if (allDone === true) {
+    resetButton()
+}
 
+function outOfTime(currentQuestion, nextQuestion) {
+    message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
+    $('#centerImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
+    $('#answers').hide();
+    $('#timer').hide();
+    setTimeout(function(){
+        askQuestion(nextQuestion);
+        $('#answers').show();
+        $('#timer').show();
+        $('#centerImage').hide();
+    }, 4000)
+    
 }
 
 function askQuestion(currentQuestion) {
+    timer();
     message.html(currentQuestion.ask)
     $('#answersA').html(currentQuestion.choices[0])
     $('#answersB').html(currentQuestion.choices[1])
