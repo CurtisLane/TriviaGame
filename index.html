@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- favicon downloaded from https://www.favicon.cc/?action=icon&file_id=693262 -->
+    <link href="assets/favicon/favicon1.ico" rel="icon" type="image/x-icon" />
+    
     <title>Avatar Trivia Game</title>
     
-    <!-- link style and reset css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- link reset, bootstrap, and style css -->
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
     <!-- link jquery and app.js -->
@@ -18,42 +23,63 @@
 <body>
     
 
-    
-    <!-- Header -->
-    <div class="header" id="header">
-        <h3 id="headerH"></h3>
-    </div>
+    <!-- all content div -->
+    <div class="contianer bg" id="mainContent">
+        <div class="row mt-5 pt-5">
+            
+            <div class="col-3" id="leftImage">
+            </div>
+            
+            <div class="col-6 text-center bg-dark mx-auto mt-5 py-3 text-light" id="colDiv">
+                <!-- Header -->
+                <div class="header" id="header">
+                    <h2 id="headerH">Avatar: The Last Airbender Trivia Game</h2>
+                </div>
 
-    <!-- timer -->
-    <div class="timer" id="timer">
-        <h3 id="timerH"></h3>
-    </div>
+                <!-- timer -->
+                <div class="timer" id="timer">
+                    <h5 id="timerH">Time left: 30 seconds</h5>
+                </div>
 
-    <!-- message to user -->
-    <div class="message" id="message">
-        <h3 id="messageH"></h3>
-    </div>
+                <!-- message to user/question -->
+                <div class="message" id="message">
+                    <h3 id="messageH">Press Start to Begin!</h3>
+                </div>
 
-    <!-- question -->
-    <div class="question" id="question">
-        <h3 id="questionH"></h3>
-    </div>
+                <!-- posible answers -->
+                <div class="answers" id="answers">
+                    <h4 id="answersA"></h4>
+                    <h4 id="answersB"></h4>
+                    <h4 id="answersC"></h4>
+                    <h4 id="answersD"></h4>
+                </div>
 
-    <!-- posible answers -->
-    <div class="answers" id="answers">
-        <h3 id="answersH"></h3>
-    </div>
+                <!-- game stats -->
+                <div class="stats" id="stats">
+                    <h3 id="correct"></h3>
+                    <h3 id="incorrect"></h3>
+                    <h3 id="score"></h3>
+                </div>
 
-    <!-- game stats -->
-    <div class="stats" id="stats">
-        <h3 id="correct"></h3>
-        <h3 id="incorrect"></h3>
-        <h3 id="score"></h3>
-    </div>
+                <!-- start button -->
+                <div id="startButtonDiv">
 
-    <!-- start over button -->
-    <button class="opacityZero" id="restartButton">Start Over</button>
+                </div>
 
+                <!-- start over button -->
+                <div id="restartButtonDiv">
+
+                </div>
+
+            </div> <!-- close col-4 -->
+
+            <div class="col-3">
+                <img src="" alt="" id="rightImage">
+            </div>
+            
+        </div> <!-- close row -->
+
+    </div> <!-- close mainContent div -->
     
 
 </body>

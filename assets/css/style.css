@@ -1,4 +1,37 @@
+/* font downloaded from http://avatarfonts.weebly.com/downloads.html */
+@font-face {
+    font-family: herculanum;
+    src: url(../font/herculanum.ttf);
+}
+
+h1, h2, h3, h4, h5, p, header, html, body, #restartButton {
+    font-family: herculanum;
+}  
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-image: url(../images/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#colDiv {
+    opacity: .96;
+}
+
+
+
+
 /* avatar theme, background, images, fonts, etc. */
 
 /* all elements display in the center of the screen */
+
+/* Images downloaded from wallup.net */
 
