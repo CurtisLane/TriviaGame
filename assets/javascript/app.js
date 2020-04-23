@@ -1,7 +1,8 @@
-$( document ).ready(function() { // page loads before js is executed
+// page loads before js is executed
+$( document ).ready(function() { 
     console.log( "ready!" );
 
-// Questions object with 3 tiers(book 1,2,3) of 10 questions each.
+// 10 questions with choices and answers
 const questions = {
     questionOne: {
         ask: 'How long was Aang frozen in ice before being discovered?',
@@ -57,81 +58,101 @@ const questions = {
 
 
 // DOM Variables
-const header = $('#headerH')
+const timerDiv = $('#timer')
+const message = $('#messageH');
+const answers = $('#answers')
+const answerA = $('#answersA');
+const answerB = $('#answersB');
+const answerC = $('#answersC');
+const answerD = $('#answersD');
+const correct = $('#correct');
+const incorrect = $('#incorrect');
+const score = $('#score');
 
-const timer = function(){
-    // timer counts down from 30 to 0
-    let count = 3
+// General Global Variables
+let correctAnswers = 0;
+let incorrectAnswers = 0;
+let playerScore = 0;
+let gameStarted = false;
+let gameOver = false;
+let questionNumber = questions.questionOne;
+
+
+
+// Functions
+
+
+
+// timer appears on screen and counts down from 30 to 0
+const startButton = function() {
+    $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
+    $('#startButton').click(function() {
+        gameStarted = true;
+        $(this).hide();
+        if (questionNumber === questions.questionOne) {
+            askQuestion(questionNumber)
+            questionNumber=questions.questionTwo
+        }
+    });
+}
+
+const timer = function(seconds){
+    let count = seconds;
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
         if (count===0){
             clearInterval(timerId);
-            outOfTime(questions.questionOne, questions.questionTwo)
+            outOfTime(questionNumber)
         }
     }, 1000)
     
 };
-const message = $('#messageH')
-const answers = $('#answersH')
-const correct = $('#correct')
-const incorrect = $('#incorrect')
-const score = $('#score')
-const startButton = function() {
-    $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
-    $('#startButton').click(function() {
-        ask = true;
-        $(this).hide();
-        askQuestion(questions.questionOne)
-    });
+ 
+function askQuestion(currentQuestion) {
+    timer(10);
+    message.html(currentQuestion.ask)
+    answerA.html(currentQuestion.choices[0])
+    answerB.html(currentQuestion.choices[1])
+    answerC.html(currentQuestion.choices[2])
+    answerD.html(currentQuestion.choices[3])
 }
+
+function outOfTime(currentQuestion) {
+    message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
+    $('#centerImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
+    answers.hide();
+    timerDiv.hide();
+    setTimeout(function(){
+        askQuestion(currentQuestion);
+        answers.show();
+        timerDiv.show();
+        $('#centerImage').hide();
+    }, 4000)
+    
+}
+
+
 const restartButton = function() {
     $('#restartButtonDiv').html('<button class="btn text-light bg-danger" id="restartButton">Start Over</button>');
     $('#restartButton').click(function() {
         correctAnswers = 0;
         incorrectAnswers = 0;
         playerScore = 0;
+        gameStarted = false;
     });
 }
 
-// General Global Variables
-let correctAnswers = 0;
-let incorrectAnswers = 0;
-let playerScore = 0;
-let ask = false;
-let allDone = false;
 
-if (ask === false) {
+// Start button on screen at the beginning of game and after restart button press
+if (gameStarted === false) {
     startButton();
 }
 
-if (allDone === true) {
-    resetButton()
+// Restart button displayed when game is over and stats are displayed
+if (gameOver === true) {
+    restartButton()
 }
-
-function outOfTime(currentQuestion, nextQuestion) {
-    message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
-    $('#centerImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
-    $('#answers').hide();
-    $('#timer').hide();
-    setTimeout(function(){
-        askQuestion(nextQuestion);
-        $('#answers').show();
-        $('#timer').show();
-        $('#centerImage').hide();
-    }, 4000)
-    
-}
-
-function askQuestion(currentQuestion) {
-    timer();
-    message.html(currentQuestion.ask)
-    $('#answersA').html(currentQuestion.choices[0])
-    $('#answersB').html(currentQuestion.choices[1])
-    $('#answersC').html(currentQuestion.choices[2])
-    $('#answersD').html(currentQuestion.choices[3])
-}
-
 
 
 // player can choose book 1, 2 , or 3. Each has 10 questions
