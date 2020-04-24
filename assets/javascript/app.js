@@ -19,39 +19,39 @@ const questions = [
         answer: 'B. Metal bending',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'Who teaches Aang firebending?',
+        choices: ['A. Zuko','B. Iroh','C. Roku','D. Azula'],
+        answer: 'A. Zuko',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'What skill does Katara reluctantly learn during a full moon?',
+        choices: ['A. Sewing','B. Bloodbending','C. gardening','D. Healing'],
+        answer: 'B. Bloodbending',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'What song did Chong sing before Aang and Katara enter the cave of two lovers?',
+        choices: ['A. Cave of wonders','B. Lover\'s kiss','C. Romantic passage','D. Secret tunnel'],
+        answer: 'D. Secret tunnel',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'Besides Aang, how many other airbenders are there?',
+        choices: ['A. 10','B. 4','C. 0','D. 12'],
+        answer: 'C. 0',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'What is the Avatar\'s flying lemur called?',
+        choices: ['A. Momo','B. Popo','C. Lolo','D. Steve'],
+        answer: 'A. Momo',
     },
     question = {
-        ask: '',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'What makes Sokka hallucinate in the desert?',
+        choices: ['A. Dehydration','B. Cactus juice','C. Heat stroke','D. A snake bite'],
+        answer: 'B. Cactus juice',
     },
     question = {
-        ask: 'FInal Question',
-        choices: ['A. ','B. ','C. ','D. '],
-        answer: '',
+        ask: 'How does Aang defeat Firelord Ozai?',
+        choices: ['A. Freezes him','B. Smashes him with a rock','C. Burns him alive','D. Takes away his bending ability'],
+        answer: 'D. Takes away his bending ability',
     },    
 ]
 
@@ -72,8 +72,6 @@ const score = $('#score');
 let correctAnswers = 0;
 let incorrectAnswers = 0;
 let playerScore = 0;
-let gameStarted = false;
-let gameOver = false;
 let questionNumber = 1;
 
 
@@ -86,63 +84,133 @@ let questionNumber = 1;
 const startButton = function() {
     $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
     $('#startButton').click(function() {
-        gameStarted = true;
         $(this).hide();
-        if (questionNumber === 1) {
-            askQuestion(0, answerD, answerA, answerB, answerC)
-        }
+        nextQuestion()
+        
     });
 }
+
 function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThree) {
+    answers.show();
     let count = 3;
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
         if (count===0){
             clearInterval(timerId);
-            outOfTime(questions[indexPosition])
+            message.html('You ran out of time! The correct answer was ' + questions[indexPosition].answer)
+            answers.hide();
+            timerDiv.hide();
+            questionNumber++
+            console.log(questionNumber)
+            setTimeout(function(){
+                nextQuestion();
+            }, 4000)
         }
     }, 1000)
+
     message.html(questions[indexPosition].ask);
     answerA.html(questions[indexPosition].choices[0]);
     answerB.html(questions[indexPosition].choices[1]);
     answerC.html(questions[indexPosition].choices[2]);
     answerD.html(questions[indexPosition].choices[3]);
+    
     correctAnswer.click(function() {
         message.html('Correct!');
         answers.hide();
         correctAnswers++;
         clearInterval(timerId);
         $('#timer').remove();
+        questionNumber++
+        console.log(questionNumber)
+        setTimeout(function(){
+            nextQuestion();
+        }, 4000)
     })
+    
     wrongOne.click(function() {
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
         $('#timer').remove();
+        questionNumber++
+        console.log(questionNumber)
+        setTimeout(function(){
+            nextQuestion();
+        }, 4000)
     })
+    
     wrongTwo.click(function() {
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
         $('#timer').remove();
+        questionNumber++
+        console.log(questionNumber)
+        setTimeout(function(){
+            nextQuestion();
+        }, 4000)
     })
+    
     wrongThree.click(function() {
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
         $('#timer').remove();
+        questionNumber++
+        console.log(questionNumber)
+        setTimeout(function(){
+            nextQuestion();
+        }, 4000)
     })
 }
 
-function outOfTime(currentQuestion) {
-    message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
-    answers.hide();
-    timerDiv.hide();
+function nextQuestion() {
+    if (questionNumber === 1) {
+        askQuestion(0, answerD, answerA, answerB, answerC)
+    } else if (questionNumber === 2) {
+        askQuestion(1, answerC, answerA, answerB, answerD)
+    } else if (questionNumber === 3) {
+        askQuestion(2, answerB, answerA, answerD, answerC)
+    } else if (questionNumber === 4) {
+        askQuestion(3, answerA, answerD, answerB, answerC)
+    } else if (questionNumber === 5) {
+        askQuestion(4, answerB, answerA, answerD, answerC)
+    } else if (questionNumber === 6) {
+        askQuestion(5, answerD, answerA, answerB, answerC)
+    } else if (questionNumber === 7) {
+        askQuestion(6, answerC, answerA, answerB, answerD)
+    } else if (questionNumber === 8) {
+        askQuestion(7, answerA, answerD, answerB, answerC)
+    } else if (questionNumber === 9) {
+        askQuestion(8, answerB, answerA, answerD, answerC)
+    } else if (questionNumber === 10) {
+        askQuestion(9, answerD, answerA, answerB, answerC)
+    } else if (questionNumber >= 11) {
+        if (correct === 10){
+            message.html('Wow you really know your stuff! You\'re a true fan.')
+        } else if (correct <10 && correct >=7) {
+            message.html('You did pretty well. Not bad!')
+        } else if (correct <7 && correct>=4){
+            message.html('Not too bad, might want to rewatch the show before trying again..')
+        } else if (correct <= 3) {
+            message.html('Have you even seen the show?')
+        }
+        score = correctAnswers*10 + '%'
+        correct.html(correctAnswers)
+        incorrect.html(incorrectAnswers)
+        score.html(playerScore)
+        restartButton()
+    }
 }
+
+
+
+
+
 
 
 const restartButton = function() {
@@ -151,21 +219,11 @@ const restartButton = function() {
         correctAnswers = 0;
         incorrectAnswers = 0;
         playerScore = 0;
-        gameStarted = false;
         startButton()
     });
 }
 
-
-// Start button on screen at the beginning of game and after restart button press
-if (gameStarted === false) {
-    startButton();
-}
-
-// Restart button displayed when game is over and stats are displayed
-if (gameOver === true) {
-    restartButton()
-}
+startButton();
 
 
 // if correct answer is chosen, a page saying correct with an uncle ozai quote appears 
