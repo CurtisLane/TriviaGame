@@ -80,19 +80,23 @@ let questionNumber = 1;
 
 
 
-// timer appears on screen and counts down from 30 to 0
 const startButton = function() {
     $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
+    correctAnswers = 0;
+    incorrectAnswers = 0;
+    playerScore = 0;
+    questionNumber = 1;
     $('#startButton').click(function() {
         $(this).hide();
-        nextQuestion()
+        message.show();
+        nextQuestion();
         
     });
 }
 
 function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThree) {
     answers.show();
-    let count = 3;
+    let count = 10;
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
@@ -120,7 +124,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         correctAnswers++;
         clearInterval(timerId);
-        $('#timer').remove();
+        $('#timer').hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -133,7 +137,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').remove();
+        $('#timer').hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -146,7 +150,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').remove();
+        $('#timer').hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -159,7 +163,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').remove();
+        $('#timer').hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -190,19 +194,23 @@ function nextQuestion() {
     } else if (questionNumber === 10) {
         askQuestion(9, answerD, answerA, answerB, answerC)
     } else if (questionNumber >= 11) {
-        if (correct === 10){
+        if (correctAnswers === 10){
             message.html('Wow you really know your stuff! You\'re a true fan.')
-        } else if (correct <10 && correct >=7) {
+        } else if (correctAnswers < 10 && correctAnswers > 7) {
             message.html('You did pretty well. Not bad!')
-        } else if (correct <7 && correct>=4){
+        } else if (correctAnswers < 8 && correctAnswers > 3){
             message.html('Not too bad, might want to rewatch the show before trying again..')
-        } else if (correct <= 3) {
+        } else if (correctAnswers <= 3) {
             message.html('Have you even seen the show?')
         }
-        score = correctAnswers*10 + '%'
-        correct.html(correctAnswers)
-        incorrect.html(incorrectAnswers)
-        score.html(playerScore)
+        message.show();
+        correct.show();
+        incorrect.show();
+        score.show();
+        playerScore = correctAnswers*10 + '%'
+        correct.html('Correct Answers: ' + correctAnswers)
+        incorrect.html('Incorrect Answers: ' + incorrectAnswers)
+        score.html('Your Score: ' + playerScore)
         restartButton()
     }
 }
@@ -219,7 +227,13 @@ const restartButton = function() {
         correctAnswers = 0;
         incorrectAnswers = 0;
         playerScore = 0;
-        startButton()
+        questionNumber = 1;
+        message.hide();
+        correct.hide();
+        incorrect.hide();
+        score.hide();
+        $('#restartButton').hide();
+        startButton();
     });
 }
 
