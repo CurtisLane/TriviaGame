@@ -96,7 +96,8 @@ const startButton = function() {
 
 function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThree) {
     answers.show();
-    let count = 10;
+    timerDiv.show();
+    let count = 30;
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
@@ -129,7 +130,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         correctAnswers++;
         clearInterval(timerId);
-        $('#timer').hide();
+        timerDiv.hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -147,7 +148,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').hide();
+        timerDiv.hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -165,7 +166,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').hide();
+        timerDiv.hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
@@ -183,7 +184,7 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         answers.hide();
         incorrectAnswers++;
         clearInterval(timerId);
-        $('#timer').hide();
+        timerDiv.hide();
         questionNumber++
         console.log(questionNumber)
         setTimeout(function(){
