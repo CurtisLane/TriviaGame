@@ -1,60 +1,59 @@
 // page loads before js is executed
 $( document ).ready(function() { 
-    console.log( "ready!" );
 
 // 10 questions with choices and answers
-const questions = {
-    questionOne: {
+const questions = [
+    question = {
         ask: 'How long was Aang frozen in ice before being discovered?',
         choices: ['A. 4 years','B. 10 years','C. 50 years','D. 100 years'],
         answer: 'D. 100 years',
     },
-    questionTwo: {
+    question = {
         ask: "What did Sokka's first girlfriend turn into?",
         choices: ['A. A fish','B. A river','C. The moon','D. The ocean'],
         answer: 'C. The moon',
     },
-    questionThree: {
+    question = {
         ask: 'What skill does Toph invent',
         choices: ['A. Rock bending','B. Metal bending','C. Echo-location','D. Lava bending'],
         answer: 'B. Metal bending',
     },
-    questionFour: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionFive: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionSix: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionSeven: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionEight: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionNine: {
+    question = {
         ask: '',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },
-    questionTen: {
-        ask: '',
+    question = {
+        ask: 'FInal Question',
         choices: ['A. ','B. ','C. ','D. '],
         answer: '',
     },    
-}    
+]
 
 
 // DOM Variables
@@ -75,7 +74,7 @@ let incorrectAnswers = 0;
 let playerScore = 0;
 let gameStarted = false;
 let gameOver = false;
-let questionNumber = questions.questionOne;
+let questionNumber = 1;
 
 
 
@@ -89,47 +88,60 @@ const startButton = function() {
     $('#startButton').click(function() {
         gameStarted = true;
         $(this).hide();
-        if (questionNumber === questions.questionOne) {
-            askQuestion(questionNumber)
+        if (questionNumber === 1) {
+            askQuestion(0, answerD, answerA, answerB, answerC)
         }
     });
 }
-
-const timer = function(seconds){
-    let count = seconds;
+function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThree) {
+    let count = 3;
     let timerId = setInterval(function() {
         count--
         $('#timerH').html('Time left: ' + count + ' seconds')
         if (count===0){
             clearInterval(timerId);
-            outOfTime(questionNumber)
+            outOfTime(questions[indexPosition])
         }
     }, 1000)
-    
-};
- 
-function askQuestion(currentQuestion) {
-    timer(1);
-    message.html(currentQuestion.ask)
-    answerA.html(currentQuestion.choices[0])
-    answerB.html(currentQuestion.choices[1])
-    answerC.html(currentQuestion.choices[2])
-    answerD.html(currentQuestion.choices[3])
+    message.html(questions[indexPosition].ask);
+    answerA.html(questions[indexPosition].choices[0]);
+    answerB.html(questions[indexPosition].choices[1]);
+    answerC.html(questions[indexPosition].choices[2]);
+    answerD.html(questions[indexPosition].choices[3]);
+    correctAnswer.click(function() {
+        message.html('Correct!');
+        answers.hide();
+        correctAnswers++;
+        clearInterval(timerId);
+        $('#timer').remove();
+    })
+    wrongOne.click(function() {
+        message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
+        answers.hide();
+        incorrectAnswers++;
+        clearInterval(timerId);
+        $('#timer').remove();
+    })
+    wrongTwo.click(function() {
+        message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
+        answers.hide();
+        incorrectAnswers++;
+        clearInterval(timerId);
+        $('#timer').remove();
+    })
+    wrongThree.click(function() {
+        message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
+        answers.hide();
+        incorrectAnswers++;
+        clearInterval(timerId);
+        $('#timer').remove();
+    })
 }
 
 function outOfTime(currentQuestion) {
     message.html('You ran out of time! The correct answer was ' + currentQuestion.answer)
-    questionNumber=questions.questionTwo
-    $('#centerImage').html('<img src="assets/images/iroh2.jpg" class="img-fluid" alt="Uncle Iroh">')
     answers.hide();
     timerDiv.hide();
-    setTimeout(function(){
-        askQuestion(questionNumber);
-        answers.show();
-        timerDiv.show();
-        $('#centerImage').hide();
-    }, 4000)
-    
 }
 
 
@@ -140,6 +152,7 @@ const restartButton = function() {
         incorrectAnswers = 0;
         playerScore = 0;
         gameStarted = false;
+        startButton()
     });
 }
 
@@ -155,8 +168,6 @@ if (gameOver === true) {
 }
 
 
-// player can choose book 1, 2 , or 3. Each has 10 questions
-// timer counts down 30sec while question and answers are posted
 // if correct answer is chosen, a page saying correct with an uncle ozai quote appears 
 // after a few seconds a new question is posted and the timer starts
 // if incorrect answer is chosen, a page displays the correct answer with zuko saying that's rough buddy
