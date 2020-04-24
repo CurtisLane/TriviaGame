@@ -119,7 +119,12 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
     answerC.html(questions[indexPosition].choices[2]);
     answerD.html(questions[indexPosition].choices[3]);
     
-    correctAnswer.click(function() {
+    correctAnswer.on('click', function() {
+        correctAnswer.off('click')
+        wrongOne.off('click')
+        wrongTwo.off('click')
+        wrongThree.off('click')
+
         message.html('Correct!');
         answers.hide();
         correctAnswers++;
@@ -132,7 +137,12 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         }, 4000)
     })
     
-    wrongOne.click(function() {
+    wrongOne.on('click', function() {
+        correctAnswer.off('click')
+        wrongOne.off('click')
+        wrongTwo.off('click')
+        wrongThree.off('click')        
+        
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
@@ -145,7 +155,12 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         }, 4000)
     })
     
-    wrongTwo.click(function() {
+    wrongTwo.on('click', function() {
+        correctAnswer.off('click')
+        wrongOne.off('click')
+        wrongTwo.off('click')
+        wrongThree.off('click')
+
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
@@ -158,7 +173,12 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         }, 4000)
     })
     
-    wrongThree.click(function() {
+    wrongThree.on('click', function() {
+        correctAnswer.off('click')
+        wrongOne.off('click')
+        wrongTwo.off('click')
+        wrongThree.off('click')
+
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
