@@ -81,16 +81,18 @@ let questionNumber = 1;
 
 
 const startButton = function() {
+    timerDiv.show()
+    $('#timerh').html('Time left: 30 seconds').show()
     $('#startButtonDiv').html('<button class="btn text-light bg-danger" id="startButton">Start</button>');
     correctAnswers = 0;
     incorrectAnswers = 0;
     playerScore = 0;
     questionNumber = 1;
+    timerDiv.show()
     $('#startButton').click(function() {
         $(this).hide();
         message.show();
         nextQuestion();
-        
     });
 }
 
@@ -125,7 +127,6 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         wrongOne.off('click')
         wrongTwo.off('click')
         wrongThree.off('click')
-
         message.html('Correct!');
         answers.hide();
         correctAnswers++;
@@ -143,7 +144,6 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         wrongOne.off('click')
         wrongTwo.off('click')
         wrongThree.off('click')        
-        
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
@@ -161,7 +161,6 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         wrongOne.off('click')
         wrongTwo.off('click')
         wrongThree.off('click')
-
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
@@ -179,7 +178,6 @@ function askQuestion(indexPosition, correctAnswer, wrongOne, wrongTwo, wrongThre
         wrongOne.off('click')
         wrongTwo.off('click')
         wrongThree.off('click')
-
         message.html('Incorrect! The correct answer was ' + questions[indexPosition].answer);
         answers.hide();
         incorrectAnswers++;
@@ -233,6 +231,8 @@ function nextQuestion() {
         incorrect.html('Incorrect Answers: ' + incorrectAnswers)
         score.html('Your Score: ' + playerScore)
         restartButton()
+        timerDiv.show()
+        $('#timerh').html('Time left: 30 seconds').show()
     }
 }
 
