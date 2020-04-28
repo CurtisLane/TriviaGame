@@ -13,12 +13,12 @@ Fun trivia game built with HTML, CSS, JavaScript, and jQuery
         * [css](./assets/css)
             * [style.css](./assets/css/reset.css)
         * [favicon](.assets/favicon)
-            * [favicon.ico](./assets/favicon/favicon1.ico)
+            * [favicon1.ico](./assets/favicon/favicon1.ico)
         * [font](./assets/font)
             * [herculanum](./assets/font/herculanum.ttf)
         * [images](./assets/images)
         * [javascript](./assets/javascript)
-            * [app.js](./assets/javascript/script.js)
+            * [app.js](./assets/javascript/app.js)
 
 ### Functions: 
     1. Title screen displayed with "Start" button.
