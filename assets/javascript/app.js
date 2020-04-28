@@ -130,7 +130,9 @@ $( document ).ready(function() {
 
         // Show hidden HTML elements to user
         answers.show();
+        $('#timerH').html('Time left: 30 seconds')
         timerDiv.show();
+
 
         // Timer counts down from 30 seconds
         let count = 30;
