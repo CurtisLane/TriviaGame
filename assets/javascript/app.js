@@ -7,61 +7,61 @@ $( document ).ready(function() {
             ask: 'How long was Aang frozen in ice before being discovered?',
             choices: ['4 years','10 years','50 years','100 years'],
             answer: '100 years',
-            answerImage: '<br><img src="assets/images/angChakras.jpg" alt="Avatar Aang Chakras" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/angChakras.jpg" alt="Avatar Aang Chakras" height="auto" width="90%">'            
         },
         {
             ask: "What did Sokka's first girlfriend turn into?",
             choices: ['A fish','A river','The moon','The ocean'],
             answer: 'The moon',
-            answerImage: '<br><img src="assets/images/thatsroughbuddy.jpg" alt="Zuko thats rough buddy" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/thatsroughbuddy.jpg" alt="Zuko thats rough buddy" height="auto" width="90%">'            
         },
         {
             ask: 'What skill does Toph invent',
             choices: ['Rock bending','Metal bending','Echo-location','Lava bending'],
             answer: 'Metal bending',
-            answerImage: '<br><img src="assets/images/tophmetalbending.jpg" alt="Toph metalbending" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/tophmetalbending.jpg" alt="Toph metalbending" height="auto" width="90%">'            
         },
         {
             ask: 'Who teaches Aang firebending?',
             choices: ['Zuko','Iroh','Roku','Azula'],
             answer: 'Zuko',
-            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-Katara-Sokka-Toph_Beifong-Prince_Zuko-Momo_lemur-Appa-748x598.jpg" alt="Avatar main characters" height="auto" width="100%">' 
+            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-Katara-Sokka-Toph_Beifong-Prince_Zuko-Momo_lemur-Appa-748x598.jpg" alt="Avatar main characters" height="auto" width="80%">' 
         },
         {
             ask: 'What skill does Katara reluctantly learn during a full moon?',
             choices: ['Sewing','Bloodbending','gardening','Healing'],
             answer: 'Bloodbending',
-            answerImage: '<br><img src="assets/images/Katara_bloodbending.png" alt="Katara Bloodbending" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/Katara_bloodbending.png" alt="Katara Bloodbending" height="auto" width="80%">'            
         },
         {
             ask: 'What song did Chong sing before Aang and Katara enter the cave of two lovers?',
             choices: ['Cave of wonders','Lover\'s kiss','Romantic passage','Secret tunnel'],
             answer: 'Secret tunnel',
-            answerImage: '<br><img src="assets/images/secretTunnel.jpg" alt="Secret tunnel" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/secretTunnel.jpg" alt="Secret tunnel" height="auto" width="80%">'            
         },
         {
             ask: 'Besides Aang, how many other airbenders are there?',
             choices: ['10','4','0','12'],
             answer: '0',
-            answerImage: '<br><img src="assets/images/onlyaang.jpg" alt="Aang" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/onlyaang.jpg" alt="Aang" height="auto" width="70%">'            
         },
         {
             ask: 'What is the Avatar\'s flying lemur called?',
             choices: ['Momo','Popo','Lolo','Steve'],
             answer: 'Momo',
-            answerImage: '<br><img src="assets/images/momo.jpg" alt="Momo" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/momo.jpg" alt="Momo" height="auto" width="60%">'            
         },
         {
             ask: 'What makes Sokka hallucinate in the desert?',
             choices: ['Dehydration','Cactus juice','Heat stroke','A snake bite'],
             answer: 'Cactus juice',
-            answerImage: '<br><img src="assets/images/cactus-juice.jpg" alt="Sokka on cactus juice" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/cactus-juice.jpg" alt="Sokka on cactus juice" height="auto" width="90%">'            
         },
         {
             ask: 'How does Aang defeat Firelord Ozai?',
             choices: ['Freezes him','Smashes him with a rock','Burns him alive','Takes away his bending ability'],
             answer: 'Takes away his bending ability',
-            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-748x421.jpg" alt="Avatar Aang boss mode" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-748x421.jpg" alt="Avatar Aang boss mode" height="auto" width="90%">'            
         },    
     ]
 
