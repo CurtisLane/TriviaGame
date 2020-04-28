@@ -41,6 +41,10 @@ a:link {
     opacity: .6;
 } 
 
+.cursorStyle{
+    cursor:pointer;
+}
+
 #centerImage {
     max-width: 350px;
     margin: auto;
@@ -49,15 +53,6 @@ a:link {
 #colDiv {
     opacity: .96;
 }
-
-
-
-
-
-
-/* avatar theme, background, images, fonts, etc. */
-
-/* all elements display in the center of the screen */
 
 /* Images downloaded from wallup.net */
 

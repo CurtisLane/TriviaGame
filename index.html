@@ -10,10 +10,8 @@
     <title>Avatar Trivia Game</title>
     
     <!-- link reset, bootstrap, and style css -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- link jquery and app.js -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -27,34 +25,35 @@
     <div class="contianer bg" id="mainContent">
         <div class="row mt-3 pt-5">
             
-            <div class="col-3" id="leftImage">
+            <!-- Empty column for styling -->
+            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-4 col-2">
             </div>
             
-            <div class="col-6 text-center bg-dark mx-auto mt-5 py-3 text-light" id="colDiv">
+            <div class="col-xs-8 col-sm-8 col-md-6 col-lg-4 col-8 align-items-center text-center bg-dark mx-auto mt-5 py-3 text-light" id="colDiv">
                 <!-- Header -->
                 <div class="header" id="header">
                     <h2 id="headerH">Avatar: The Last Airbender Trivia Game</h2>
                 </div>
                 
                 <hr class="hr my-3">
-                                <!-- timer -->
+
+                <!-- timer -->
                 <div class="timer" id="timer">
-                    <h5 id="timerH">Time left: 30 seconds</h5>
+                    <h5 id="timerH"></h5>
                 </div>
 
                 <!-- message to user/question -->
                 <div class="message" id="message">
-                    <h3 id="messageH">Press Start to Begin!</h3>
+                    <h3 id="messageH"></h3>
                 </div>
 
                 <!-- posible answers -->
                 <div class="answers" id="answers">
-                    <a class="text-light myA" href="#"><h5 class="hover" id="answersA"></h5></a>
-                    <a class="text-light myA" href="#"><h5 class="hover" id="answersB"></h5></a>
-                    <a class="text-light myA" href="#"><h5 class="hover" id="answersC"></h5></a>
-                    <a class="text-light myA" href="#"><h5 class="hover" id="answersD"></h5></a>
+                    <h5 class="hover cursorStyle" id="answersA"></h5>
+                    <h5 class="hover cursorStyle" id="answersB"></h5>
+                    <h5 class="hover cursorStyle" id="answersC"></h5>
+                    <h5 class="hover cursorStyle" id="answersD"></h5>
                 </div>
-
                 <div id="centerImage">
 
                 </div>
@@ -76,15 +75,15 @@
 
                 </div>
 
-            </div> <!-- close col-4 -->
+            </div><!-- close col-4 -->
 
-            <div class="col-3">
-                <img src="" alt="" id="rightImage">
+            <!-- Empty column for styling -->
+            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-4 col-2">
             </div>
             
-        </div> <!-- close row -->
+        </div><!-- close row -->
 
-    </div> <!-- close mainContent div -->
+    </div><!-- close mainContent div -->
     
 
 </body>
