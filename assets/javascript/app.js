@@ -13,13 +13,13 @@ $( document ).ready(function() {
             ask: "What did Sokka's first girlfriend turn into?",
             choices: ['A fish','A river','The moon','The ocean'],
             answer: 'The moon',
-            answerImage: '<br><img src="assets/images/iroh4.png" alt="Iroh quote" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/thatsroughbuddy.jpg" alt="Zuko thats rough buddy" height="auto" width="100%">'            
         },
         {
             ask: 'What skill does Toph invent',
             choices: ['Rock bending','Metal bending','Echo-location','Lava bending'],
             answer: 'Metal bending',
-            answerImage: '<br><img src="assets/images/iroh3.jpg" alt="Iroh quote" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/tophmetalbending.jpg" alt="Toph metalbending" height="auto" width="100%">'            
         },
         {
             ask: 'Who teaches Aang firebending?',
@@ -31,25 +31,25 @@ $( document ).ready(function() {
             ask: 'What skill does Katara reluctantly learn during a full moon?',
             choices: ['Sewing','Bloodbending','gardening','Healing'],
             answer: 'Bloodbending',
-            answerImage: '<br><img src="assets/images/BaSingSeIrohCrying.jpg" alt="Iroh sad" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/Katara_bloodbending.png" alt="Katara Bloodbending" height="auto" width="100%">'            
         },
         {
             ask: 'What song did Chong sing before Aang and Katara enter the cave of two lovers?',
             choices: ['Cave of wonders','Lover\'s kiss','Romantic passage','Secret tunnel'],
             answer: 'Secret tunnel',
-            answerImage: '<br><img src="assets/images/iroh2.jpg" alt="Iroh Quote" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/secretTunnel.jpg" alt="Secret tunnel" height="auto" width="100%">'            
         },
         {
             ask: 'Besides Aang, how many other airbenders are there?',
             choices: ['10','4','0','12'],
             answer: '0',
-            answerImage: '<br><img src="assets/images/avatarthelastairbender.jpg" alt="Zuko" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/onlyaang.jpg" alt="Aang" height="auto" width="100%">'            
         },
         {
             ask: 'What is the Avatar\'s flying lemur called?',
             choices: ['Momo','Popo','Lolo','Steve'],
             answer: 'Momo',
-            answerImage: '<br><img src="assets/images/momo.png" alt="Momo" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/momo.jpg" alt="Momo" height="auto" width="100%">'            
         },
         {
             ask: 'What makes Sokka hallucinate in the desert?',
@@ -61,7 +61,7 @@ $( document ).ready(function() {
             ask: 'How does Aang defeat Firelord Ozai?',
             choices: ['Freezes him','Smashes him with a rock','Burns him alive','Takes away his bending ability'],
             answer: 'Takes away his bending ability',
-            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-748x421.jpg" alt="Avatar Aang Chakras" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/Avatar_The_Last_Airbender-Aang-748x421.jpg" alt="Avatar Aang boss mode" height="auto" width="100%">'            
         },    
     ]
 
