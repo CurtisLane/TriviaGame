@@ -49,7 +49,7 @@ $( document ).ready(function() {
             ask: 'What is the Avatar\'s flying lemur called?',
             choices: ['Momo','Popo','Lolo','Steve'],
             answer: 'Momo',
-            answerImage: '<br><img src="assets/images/momo.jpg" alt="Momo" height="auto" width="100%">'            
+            answerImage: '<br><img src="assets/images/momo.png" alt="Momo" height="auto" width="100%">'            
         },
         {
             ask: 'What makes Sokka hallucinate in the desert?',
@@ -92,6 +92,7 @@ $( document ).ready(function() {
         
         // Message to user: Press Start To Begin!
         $('#messageH').html('Press Start To Begin!')
+        message.show()
 
         // timer is displayed
         $('#timerH').html('Time left: 30 seconds')
@@ -111,7 +112,6 @@ $( document ).ready(function() {
             
             // Hide/show html elements, call nextQuestion function
             $(this).hide();
-            message.show();
             nextQuestion();
         });
     }
