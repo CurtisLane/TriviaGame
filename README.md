@@ -8,7 +8,7 @@ Fun trivia game built with HTML, CSS, JavaScript, and jQuery
     * [index.html](./index.html)
     * [assets](./assets)
         * [css](./assets/css)
-            * [style.css](./assets/css/reset.css)
+            * [style.css](./assets/css/style.css)
         * [favicon](.assets/favicon)
             * [favicon1.ico](./assets/favicon/favicon1.ico)
         * [font](./assets/font)
