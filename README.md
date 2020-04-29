@@ -1,9 +1,6 @@
 # TriviaGame
 Fun trivia game built with HTML, CSS, JavaScript, and jQuery
 
-# unit-4-game
-## Star Wars role playing game using jQuery
-
 ### Play the game here: [Avatar: The Last Airbender Trivia Game](https://curtislane.github.io/TriviaGame/)
 
 ### Directories:
