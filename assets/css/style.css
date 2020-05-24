@@ -56,3 +56,12 @@ a:link {
 
 /* Images downloaded from wallup.net */
 
+/* ----- Media queries ----- */
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center; 
+    }
+
+}
