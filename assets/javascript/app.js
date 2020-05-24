@@ -78,7 +78,7 @@ $( document ).ready(function() {
     const incorrect = $('#incorrect');
     const score = $('#score');
 
-    // General Global Variables ====================================
+    // Global Variables ====================================
 
     let correctAnswers = 0;
     let incorrectAnswers = 0;
