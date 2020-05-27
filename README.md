@@ -17,6 +17,9 @@ Fun trivia game built with HTML, CSS, JavaScript, and jQuery
         * [javascript](./assets/javascript)
             * [app.js](./assets/javascript/app.js)
 
+![picture](assets/images/triviaGame.jpg)
+
+
 ### Functions: 
     1. Title screen displayed with "Start" button.
         1a. Clicking the "Start" button initialized the game.
